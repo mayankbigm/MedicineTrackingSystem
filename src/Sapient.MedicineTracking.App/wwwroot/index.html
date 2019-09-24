@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Medicine Tracking System</title>
+    <style>
+        input[type='submit'], button, [aria-label] {
+            cursor: pointer;
+        }
+
+        #spoiler {
+            display: none;
+        }
+
+        table {
+            border: 1px solid;
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+        }
+
+        th {
+            background-color: #0066CC;
+            color: yellow;
+            padding: 10px;
+        }
+
+        td {
+            border: 1px solid;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sapient - Medicine Tracking System</h1>
+    <h3>Add a new Medicine</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
+        Name: <input type="text" id="add-name" placeholder="New Medicine Name"><br />
+        Brand: <input type="text" id="add-brand" placeholder="New Medicine Brand"><br />
+        Quantity: <input type="number" id="add-quantity" placeholder="New Medicine Quantity"><br />
+        Price: <input type="number" step=".01" id="add-price" placeholder="New Medicine Price"><br />
+        Expiry Date: <input type="date" id="add-expiryDate" placeholder="New Medicine Expiry Date"><br />
+        Notes: <input type="text" id="add-notes" placeholder="Notes"><br />
+        <input type="submit" value="Add">
+    </form>
+
+    <div id="spoiler">
+        <h3>Edit</h3>
+        <form class="my-form">
+            <input type="hidden" id="edit-id">
+            <input type="checkbox" id="edit-isComplete">
+            Name: <input type="text" id="edit-name"><br />
+            Brand:<input type="text" id="edit-brand"><br />
+            Quantity:<input type="number" id="edit-quantity"><br />
+            Price:<input type="number" step=".01" id="edit-price"><br />
+            Expiry Date: <input type="date" id="edit-expiryDate"><br />
+            Notes:<input type="text" id="edit-notes"><br /><br />
+            <input type="submit" value="Save Changes">
+            <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+        </form>
+    </div>
+
+    <p id="counter"></p>
+
+    <table>
+        <tr>
+            <th>Is-Complete</th>
+            <th>Name</th>
+            <th>Brand</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>ExpiryDate</th>
+            <th>Notes</th>
+        </tr>
+        <tbody id="Medicines"></tbody>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
+    <script src="js/site.js"></script>
+</body>
+</html>

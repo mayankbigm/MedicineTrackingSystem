@@ -1,0 +1,1 @@
+Sample UI Project using plain Javascript
